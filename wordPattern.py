@@ -25,7 +25,27 @@ class Solution(object):
                     
         return True
 
+
+    def wordPattern2(self, pattern, str):
+        """
+        :type pattern: str
+        :type str: str
+        :rtype: bool
+        """
+
+        # prettier version
+        pattern = list(pattern)
+        str = str.split(' ')
+        
+        if len(pattern) != len(str):
+            return False
+        
+        if len(set(zip(pattern, str)))==len(set(str))==len(set(pattern)):
+            return True
+        else:
+            return False
+        
 if __name__ == '__main__':
 
     test = Solution()
-    print(test.wordPattern('abba','chen keaton keaton chen'))
+    print(test.wordPattern2('abba','chen keaton keaton chen'))
