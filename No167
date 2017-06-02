@@ -1,0 +1,19 @@
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        # too slow!
+        #for i in range(len(numbers)):
+        #   for j in range(i+1, len(numbers)):
+        #        if numbers[i] + numbers[j] == target:
+        #            return i+1, j+1
+                    
+        dic = {}
+        for i, num in enumerate(numbers):
+            if target-num in dic:
+                return [dic[target-num]+1,i+1]
+                
+            dic[num]=i
