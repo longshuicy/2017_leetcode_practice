@@ -17,3 +17,5 @@ class Solution:
                     if strs[j][i] != current_char:
                         return strs[j][0:i]
                     
+            return shortest_str
+                    
